@@ -37,7 +37,6 @@ module.exports.checkout_get = async(req,res) => {
 
 // saves data to address model and then redirects to address conformation page
 module.exports.checkout_address_save = async (req,res) => {
-  console.log("IN SAVE NEW ADDRESSSSSSSSSSSS");
   var {name ,mobileno ,pincode ,details, landmark, city, state ,addrHome,addrOffice,defaulta } = req.body;
   console.log(name);
   console.log(defaulta);
