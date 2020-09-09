@@ -20,30 +20,28 @@ class Address extends React.Component
           this.HandleProceedBtn = this.HandleProceedBtn.bind(this)
     } 
   
-      updatestate(a)
+  updatestate(a)
+  {
+      console.log("yayyyyyyyyyyyyyyy");
+      var addressdetails=[];
+      for (var i =0 ;i<a.length;i++)
       {
-          console.log("yayyyyyyyyyyyyyyy");
-          var addressdetails=[];
-          for (var i =0 ;i<a.length;i++)
-          {
-            let details = a[i];
-            //console.log(details);
-            var pd= <AddressDetail   name ={details.name} price= {details.price}  id = {details._id} mobileno={details.mobileno} details={details.details}  city={details.city} state={details.state} pincode={details.pincode} selectedAddr={this.selectedAddress}/>
-            //console.log(pd);
-            addressdetails.push(pd);
-          }
-          
-          this.setState({useraddress:addressdetails});
-          
+        let details = a[i];
+        //console.log(details);
+        var pd= <AddressDetail   name ={details.name} price= {details.price}  id = {details._id} mobileno={details.mobileno} details={details.details}  city={details.city} state={details.state} pincode={details.pincode} selectedAddr={this.selectedAddress}/>
+        //console.log(pd);
+        addressdetails.push(pd);
       }
 
-     selectedAddress(a)
-      {
+      this.setState({useraddress:addressdetails});
+  }
 
-          this.setState({selectedaddr:a}, () => {
-            console.log("SELECTED ADDRESS IS " + this.state.selectedaddr);
-        }); 
-      }
+ selectedAddress(a)
+  {
+      this.setState({selectedaddr:a}, () => {
+        console.log("SELECTED ADDRESS IS " + this.state.selectedaddr);
+    }); 
+  }
       
     componentWillMount()
     {
@@ -62,7 +60,7 @@ class Address extends React.Component
             console.log(error);
             alert("error");
         })
-    
+
     }
 
     HandleProceedBtn()
@@ -90,24 +88,25 @@ class Address extends React.Component
 
 
 
-  render()
-  {
-    return (
-        <>
-            <center className="addr-container">
-                <div class="addr-checkout-header">Select Address</div>
-                <br/>
+      render()
+      {
+        return (
+            <>
+                <center className="addr-container">
+                    <div class="addr-checkout-header">Select Address</div>
+                    <br/>
 
-                {this.state.useraddress}
+                    {this.state.useraddress}
 
-                <button type="submit" class="buy-btn" onClick={this.HandleProceedBtn}>Proceed to payment</button> 
-                
-                <button class="buy-btn" onClick={this.HandleNewAddrBtn}>Add new Address</button>
-                
-            </center>
-        </>
-    );
-  }
+                    <button type="submit" class="buy-btn" onClick={this.HandleProceedBtn}>Proceed to payment</button> 
+
+                    <button class="buy-btn" onClick={this.HandleNewAddrBtn}>Add new Address</button>
+
+                </center>
+            </>
+        );
+      }
+    
 }
 
 
