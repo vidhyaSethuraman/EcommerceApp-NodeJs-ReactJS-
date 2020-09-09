@@ -34,19 +34,6 @@ module.exports.order_placed_get = async (req,res) => {
     res.status(201).json({delivary_date});
 }
 
-/*module.exports.order_get = async (req,res) => {
-
-    var userinfo = res.locals.user;
-    try{
-        let userorder = await Order.findOne({customer_id : userinfo._id});
-        console.log(userorder);
-    }
-    catch(err)
-    {
-        console.log("Order page " + err);
-    }
-    res.send("Order are displayed here");
-}*/
 
 module.exports.order_track_get = async (req,res) => {
 
