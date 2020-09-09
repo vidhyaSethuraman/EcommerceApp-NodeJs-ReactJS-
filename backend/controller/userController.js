@@ -58,7 +58,6 @@ const handleErrors = (err) => {
 
 
 module.exports.signup_post = async (req, res) => {
-  console.log("SIGNUPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP");
   const { email, password } = req.body;
   try 
   {
@@ -80,7 +79,6 @@ module.exports.signup_post = async (req, res) => {
 
 module.exports.login_post = async (req, res) => {
 
-  console.log("LOGINNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN");
   const { email, password } = req.body;
 
   try {
@@ -102,10 +100,7 @@ module.exports.login_post = async (req, res) => {
   
 }
 
-module.exports.logout = (req, res) => {
-  res.cookie('jwt', '', { maxAge: 1 });
-  res.redirect('/');
-}
+
 
 
 
