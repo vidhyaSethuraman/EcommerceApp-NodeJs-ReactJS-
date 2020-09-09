@@ -17,7 +17,7 @@ module.exports.wishlist_delete = async (req,res) => {
     delete wlitems[id]
     
     let userwlupdated = await Wishlist.findOneAndUpdate({customer_id : userinfo._id}, {product_id_list: wlitems});
-    console.log("AFter removinggg " + userwlupdated);
+    console.log("After removing wishlist item " + userwlupdated);
   }
   catch(err)
   {
