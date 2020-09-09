@@ -6,7 +6,6 @@ const authorize = (req, res, next) => {
  console.log("in authooooo");
   //const token = req.cookies.jwt;
   var token = req.query.jwt;
-  console.log("AUTO TOKENNN " +token);
   // check json web token exists & is verified
   if (token) {
     jwt.verify(token, 'camilla miller webapp', (err, decodedToken) => {
@@ -34,10 +33,7 @@ const checkUser = async(req, res, next) => {
   console.log("IN CHECK USERRRRRRRR");
   //const token = req.cookies.jwt;
   const token = req.query.jwt;
-  var mtc = req.query.mtc;
   res.locals.mtc =mtc;
-  //console.log("REq paramsss " + token );
-  //console.log(token);
   if (token) {
     jwt.verify(token, 'camilla miller webapp', async (err, decodedToken) => {
       if (err) {
