@@ -74,7 +74,6 @@ router.get('/login',userController.login_get);
 router.get('/signup',userController.signup_get);
 router.post('/login',urlep,userController.login_post);
 router.post('/signup',urlep,userController.signup_post);
-router.get('/logout', userController.logout);
 
 //cart routes
 router.get('/addtocart:id',[authorize,checkUser],cartController.addtocart_get);
@@ -103,10 +102,7 @@ router.get('/movetocart:id',[authorize,checkUser],wishlistController.wishlist_mo
 
 //order routes
 router.get('/order/placed',[authorize,checkUser],orderController.order_placed_get);
-//router.get('/myorders',[authorize,checkUser],orderController.order_get);
 router.get('/order/tracking',[authorize,checkUser], orderController.order_track_get);
-//router.post('/order/tracking', orderController.order_track_post);
-
 
 
 module.exports = router;
